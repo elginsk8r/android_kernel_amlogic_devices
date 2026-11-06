@@ -1,0 +1,15 @@
+# SPDX-License-Identifier: GPL-2.0
+
+load("//vendor/amlogic/devices/kleaf:device.bzl", "amlogic_kernel_device")
+
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+amlogic_kernel_device(
+    target = "odroidn2",
+    build_config = "build.config.g12",
+    target_dtb = [
+        "g12b_s922d_odroidn2.dtb",
+    ],
+)
