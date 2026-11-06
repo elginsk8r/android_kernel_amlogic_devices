@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: GPL-2.0
+
+load("//vendor/amlogic/dhd-driver:defs.bzl", "bcmdhd_591_sdio_module")
+load("//vendor/amlogic/devices/kleaf:device.bzl", "amlogic_kernel_device")
+
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+bcmdhd_591_sdio_module(name = "wlan_ap6356", kernel_build = ":radxa02pro")
+
+amlogic_kernel_device(
+    target = "radxa02pro",
+    build_config = "build.config.g12",
+    target_dtb = [
+        "g12b_a311d_radxa02pro.dtb",
+    ],
+    kernel_modules = [
+        ":wlan_ap6356",
+    ],
+)
