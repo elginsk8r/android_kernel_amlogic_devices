@@ -7,8 +7,63 @@ package(
 )
 
 amlogic_kernel_device(
+    target = "dopinder",
+    dtb_target = ["g12a_s905x2_u212_sti6130d3x0.dtb"],
+    extra_modules = [
+        "wlan_rtl8822cs",
+    ],
+)
+
+amlogic_kernel_device(
+    target = "m5",
+    dtb_target = ["sm1_s905x3_bananapim5.dtb"],
+    dtbo_target = [
+        "android_overlay_dt.dtbo",
+        "sm1_s905x3_bananapim5_wifi_overlay.dtbo",
+    ],
+    extra_modules = [
+        "realtek_btusb",
+        "wlan_rtl8822cs",
+    ],
+)
+
+amlogic_kernel_device(
+    target = "nicepool",
+    dtb_target = ["g12a_s905x2_u212_nicepool.dtb"],
+    extra_modules = [
+        "wlan_ap6356",
+        "wlan_rtl8822cs",
+    ],
+)
+
+amlogic_kernel_device(
+    target = "radxa02",
+    dtb_target = ["sm1_s905d3_radxa02.dtb"],
+    extra_modules = [
+        "wlan_ap6356",
+    ],
+)
+
+amlogic_kernel_device(
     target = "radxa02pro",
     dtb_target = ["g12b_a311d_radxa02pro.dtb"],
+    extra_modules = [
+        "wlan_ap6356",
+    ],
+)
+
+amlogic_kernel_device(
+    target = "sabrina",
+    dtb_target = ["sm1_s905d3_sabrina.dtb"],
+    extra_modules = [
+        "wlan_ap6356",
+    ],
+)
+
+amlogic_kernel_device(
+    target = "wade",
+    dtb_target = ["g12a_s905x2_u212_sti6130d3x0.dtb"],
+    dtbo_target = ["sti6140d350_overlay.dtb"],
     extra_modules = [
         "wlan_ap6356",
     ],
